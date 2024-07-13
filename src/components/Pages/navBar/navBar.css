@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff8800; /* Orange */
+    padding: 10px 20px;
+}
+
+.navbar-logo {
+    font-size: 32px;
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a,
+.navbar ul li button {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar ul li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar ul li a:hover,
+.navbar ul li button:hover {
+    color: #f0f0f0;
+}
