@@ -6,12 +6,14 @@ const AuthProvider = ({ children }) => {
     const [authState, setAuthState] = useState({
         isAuthenticated: false,
         user: null,
+       
     });
 
-    const login = (user) => {
+    const login = (user,following) => {
         setAuthState({
             isAuthenticated: true,
             user,
+            
         });
     };
 
@@ -19,6 +21,7 @@ const AuthProvider = ({ children }) => {
         setAuthState({
             isAuthenticated: false,
             user: null,
+            following:null,
         });
     };
 
