@@ -14,8 +14,6 @@ function Login() {
   const [message, setMessage] = useState("");
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [followingData, setFollowingData] = useState(null);
-  const [followingDataArray, setfollowingDataArray] = useState(null);
   const handleLogin = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:5000/auth/login", {

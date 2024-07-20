@@ -69,7 +69,9 @@ const Search = () => {
             <button
               className="followButton"
               onClick={() => handleFollow(user._id)}
-            ></button>
+            >
+              Follow
+            </button>
           </li>
         ))}
       </ul>

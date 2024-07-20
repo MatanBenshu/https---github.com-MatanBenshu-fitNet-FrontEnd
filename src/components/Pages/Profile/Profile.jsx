@@ -15,6 +15,7 @@ const Profile = () => {
   const [gender, setGender] = useState("");
   const [address, setAddress] = useState("");
 
+  
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -22,6 +23,7 @@ const Profile = () => {
           `http://localhost:5000/users/${authState.user._id}`
         );
         const data = await response.json();
+        
         if (data.success) {
           setUser(data.user);
           setFirstName(data.user.firstName);
@@ -69,35 +71,6 @@ const Profile = () => {
       }
     } catch (error) {
       setMessage("Error updating profile: " + error.message);
-    }
-  };
-
-  const handleFollow = async (id) => {
-    try {
-      const response = await fetch(`http://localhost:5000/users/${id}/follow`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userId: authState.user._id }),
-      });
-
-      const data = await response.json();
-      if (data.success) {
-        setMessage("User followed successfully");
-        // Optionally refresh user data to update followers list
-        const updatedUser = await fetch(
-          `http://localhost:5000/users/${authState.user._id}`
-        );
-        const updatedData = await updatedUser.json();
-        if (updatedData.success) {
-          setUser(updatedData.user);
-        }
-      } else {
-        setMessage("Error following user: " + data.message);
-      }
-    } catch (error) {
-      setMessage("Error following user: " + error.message);
     }
   };
 
